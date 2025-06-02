@@ -52,6 +52,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
+            // トラッキングイベントの送信
+            // Google Tag Manager
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({
+                    'event': 'form_submit',
+                    'form_type': 'monitor_application',
+                    'company_name': company,
+                    'user_email': email
+                });
+            }
+            
+            // Meta Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Monitor Application',
+                    content_category: 'Form Submission'
+                });
+            }
+            
             // 隠しiframeを作成してGASに送信
             const iframe = document.createElement('iframe');
             iframe.style.display = 'none';
