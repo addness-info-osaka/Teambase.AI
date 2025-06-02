@@ -380,18 +380,23 @@ section h2::after {
 }
 .features-flex {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
+    align-items: start;
 }
 .feature-card {
     background: var(--light-bg);
     border-radius: var(--radius);
-    padding: 32px 24px;
+    padding: 36px 28px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(27,43,68,0.06);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .feature-card::before {
@@ -410,18 +415,21 @@ section h2::after {
 }
 .feature-img {
     color: var(--cta-color);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     filter: drop-shadow(0 4px 8px rgba(74, 144, 226, 0.3));
+    display: block;
 }
 .feature-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     color: var(--primary-color);
+    line-height: 1.4;
 }
 .feature-card p {
     color: #666;
     line-height: 1.7;
+    font-size: 1.05rem;
 }
 
 /* 問題点セクション */
@@ -430,19 +438,21 @@ section h2::after {
 }
 .problem-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    align-items: start;
 }
 .problem-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     background: var(--card-bg);
     border-radius: var(--radius);
-    padding: 24px;
+    padding: 28px 24px;
     box-shadow: 0 4px 12px rgba(255, 107, 107, 0.08);
     transition: var(--transition);
     border-left: 4px solid var(--accent-color);
+    min-height: 120px;
 }
 .problem-item:hover {
     transform: translateY(-4px);
@@ -452,11 +462,16 @@ section h2::after {
     color: var(--accent-color);
     flex-shrink: 0;
     filter: drop-shadow(0 2px 4px rgba(255, 107, 107, 0.3));
+    margin-top: 4px;
+    width: 24px;
+    text-align: center;
 }
 .problem-item p {
     font-weight: 500;
     color: var(--text-color);
     line-height: 1.6;
+    margin: 0;
+    font-size: 1.05rem;
 }
 
 /* 解決策セクション */
@@ -465,17 +480,22 @@ section h2::after {
 }
 .solution-flex {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+    align-items: start;
 }
 .solution-step {
     text-align: center;
     background: var(--light-bg);
     border-radius: var(--radius);
-    padding: 32px 20px;
+    padding: 36px 24px;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .solution-step::before {
@@ -494,68 +514,21 @@ section h2::after {
 }
 .solution-img {
     color: var(--accent-color);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     filter: drop-shadow(0 4px 8px rgba(255, 107, 107, 0.3));
+    display: block;
 }
 .solution-step h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     color: var(--primary-color);
+    line-height: 1.4;
 }
 .solution-step p {
     color: #666;
     line-height: 1.6;
-}
-
-/* 導入事例セクション */
-.case-studies {
-    background: linear-gradient(135deg, var(--light-bg) 0%, #fff 100%);
-}
-.case-flex {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-}
-.case-card {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    padding: 32px 24px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(27,43,68,0.06);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.case-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-}
-
-.case-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-large);
-}
-.case-img {
-    color: #FFA500;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 4px 8px rgba(255, 165, 0, 0.3));
-}
-.case-card h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--primary-color);
-}
-.case-card p {
-    color: #666;
-    font-weight: 500;
+    font-size: 1.05rem;
 }
 
 /* お客様の声セクション */
@@ -564,8 +537,9 @@ section h2::after {
 }
 .voices-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+    align-items: start;
 }
 .voice-box {
     background: linear-gradient(135deg, var(--light-bg) 0%, #fff 100%);
@@ -574,6 +548,10 @@ section h2::after {
     box-shadow: 0 4px 12px rgba(27,43,68,0.06);
     transition: var(--transition);
     border-left: 4px solid var(--cta-color);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
 }
 
 .voice-box:hover {
@@ -583,16 +561,21 @@ section h2::after {
 
 .voice-title {
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 1.1rem;
+    line-height: 1.4;
+    min-height: 60px;
+    align-items: flex-start;
 }
 .voice-title i {
     color: var(--cta-color);
     filter: drop-shadow(0 2px 4px rgba(74, 144, 226, 0.3));
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 .voice-item {
     margin-bottom: 20px;
@@ -602,6 +585,7 @@ section h2::after {
     border-left: 3px solid var(--accent-color);
     font-style: italic;
     line-height: 1.7;
+    flex: 1;
 }
 
 .voice-item:last-child {
@@ -831,7 +815,7 @@ html {
         display: none;
     }
     .header-flex {
-        justify-content: center;
+        justify-content: space-between;
     }
     .header-cta {
         position: fixed;
@@ -858,7 +842,8 @@ html {
         order: 1;
     }
     .voices-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
     }
     .contact-flex {
         flex-direction: column;
@@ -872,6 +857,30 @@ html {
     }
     section h2 {
         font-size: 1.8rem;
+    }
+    .features-flex {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+    .feature-card {
+        min-height: 200px;
+        padding: 32px 24px;
+    }
+    .solution-flex {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .solution-step {
+        min-height: 180px;
+        padding: 32px 20px;
+    }
+    .problem-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .problem-item {
+        min-height: 100px;
+        padding: 24px 20px;
     }
 }
 
@@ -900,5 +909,52 @@ html {
     }
     .achievement-item {
         justify-content: center;
+    }
+    .voices-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .voice-box {
+        min-height: auto;
+        padding: 28px 20px;
+    }
+    .voice-title {
+        min-height: 50px;
+        font-size: 1rem;
+    }
+    .features-flex {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .feature-card {
+        min-height: 180px;
+        padding: 28px 20px;
+    }
+    .solution-flex {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .solution-step {
+        min-height: 160px;
+        padding: 28px 20px;
+    }
+    .problem-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .problem-item {
+        padding: 20px;
+        gap: 16px;
+        min-height: 90px;
+    }
+    .container {
+        padding: 0 16px;
+    }
+    section {
+        padding: 50px 0;
+    }
+    section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 32px;
     }
 } 
